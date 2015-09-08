@@ -37,7 +37,6 @@ public class GeometryController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
       
-        
        CalculationsService service = new CalculationsService();
          String hiddenParam=request.getParameter("formType");
         if(hiddenParam.equals("circleForm")){
