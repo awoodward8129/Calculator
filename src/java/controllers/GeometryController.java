@@ -39,32 +39,24 @@ public class GeometryController extends HttpServlet {
       
         
        CalculationsService service = new CalculationsService();
-
-         
-        
          String hiddenParam=request.getParameter("formType");
-         
-            if(hiddenParam.equals("circleForm")){
-                
-         String radius = request.getParameter("radius");
-                
+        if(hiddenParam.equals("circleForm")){
+                 String radius = request.getParameter("radius");
                  double circleResult = service.getCircleArea(radius);
-        request.setAttribute("circleResult", circleResult);
-        
-            }else if(hiddenParam.equals("rectangleForm")){
+                 request.setAttribute("circleResult", circleResult);
+         }else if(hiddenParam.equals("rectangleForm")){
                         
-         String length = request.getParameter("length");
-         String width = request.getParameter("width");
-             double rectResult = service.getRectangleArea(length, width);
-        request.setAttribute("rectResult", rectResult);
+                String length = request.getParameter("length");
+                String width = request.getParameter("width");
+                double rectResult = service.getRectangleArea(length, width);
+                request.setAttribute("rectResult", rectResult);
 
-            }else if(hiddenParam.equals("triangleForm")){
+        }else if(hiddenParam.equals("triangleForm")){
                         
-         String base = request.getParameter("base");
-         String height = request.getParameter("height");
-             double triResult = service.getTriangleArea(base, height);
-        request.setAttribute("triResult", triResult);
-
+                String base = request.getParameter("base");
+                String height = request.getParameter("height");
+                double triResult = service.getTriangleArea(base, height);
+                request.setAttribute("triResult", triResult);
             }
  
         RequestDispatcher view =
