@@ -39,12 +39,16 @@
             </div>  
               <div class="row container">
                  <div class="col-md-4">
-                     <p> The area of this rectangle is: ${rectResult}</p>
+                        <c:if test = "${rectResult >= 0}">
+                        
+                         <p> The area of this rectangle is: <fmt:formatNumber  type="number" pattern="0.00" value="${rectResult}"/></p>
+                        </c:if>
+                    
                   </div>    
               </div>
              <div class="row container">
                 <div class="col-md-4">
-                    <h3>Calculate the Area of a Rectangle</h3>
+                    <h3>Calculate the Area of a Circle</h3>
                     <form role="form" name="form2" action="GeometryController" method="POST"> 
                      <div class="form-group">    
                         <input id="formType" name="formType"   type="hidden" value="circleForm">
@@ -57,10 +61,12 @@
               </div>
               <div class="row container">
                 <div class="col-md-4">
-                    <p> The area of this circle is: 
-                        <c:set var="circleArea" value="${circleResult}"/>
-                        <fmt:formatNumber var="i" type="number" pattern="0.00" value="${circleArea}"/>
-                        <c:out value="${i}" />
+                    <p>
+                        
+                        <c:if test = "${circleResult >= 0}">
+                        
+                         <p> The area of this rectangle is: <fmt:formatNumber  type="number" pattern="0.00" value="${circleResult}"/></p>
+                        </c:if>
                     </p>
                 </div>
                </div>          
@@ -83,7 +89,10 @@
            </div>
             <div class="row container">
               <div class="col-md-4">
-                    <p> The area of this triangle is: ${triResult} </p>
+                       <c:if test = "${triResult >= 0}">
+                       
+                         <p> The area of this rectangle is:  <fmt:formatNumber  type="number" pattern="0.00" value="${triResult}"/></p>
+                        </c:if>
                </div>
             </div>
     </body>
